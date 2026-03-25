@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лаб 1 — Прямолінійний рух (Canvas)</title>
+</head>
+<body>
+
+<h2>Моделювання кінематики прямолінійного руху (Canvas)</h2>
+
+<canvas id="canvas" width="800" height="200" style="border:1px solid black;"></canvas>
+
+<br><br>
+
+Тип руху:
+<select id="motionType">
+    <option value="uniform">Рівномірний</option>
+    <option value="accelerated">Рівноприскорений</option>
+</select>
+
+<br><br>
+
+Швидкість (v₀): 
+<input type="number" id="velocity" value="100">
+
+<br><br>
+
+Прискорення (a): 
+<input type="number" id="acceleration" value="20">
+
+<br><br>
+
+<button onclick="start()">Старт</button>
+<button onclick="stop()">Стоп</button>
+<button onclick="reset()">Скинути</button>
+
+<p id="info"></p>
+
+<script src="canvas_motion.js"></script>
+
+</body>
+</html>

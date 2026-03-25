@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лаб 1 — Траєкторія руху</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Моделювання траєкторії руху матеріальної точки</h2>
+
+<div class="controls">
+    x0: <input type="number" id="x0" value="0">
+    y0: <input type="number" id="y0" value="0">
+    Кут (градуси): <input type="number" id="angle" value="45">
+    v0: <input type="number" id="velocity" value="50">
+    a: <input type="number" id="acceleration" value="9.8">
+    Колір: <input type="color" id="color" value="#ff0000">
+    <button onclick="drawTrajectory()">Побудувати</button>
+    <button onclick="clearCanvas()">Очистити</button>
+</div>
+
+<canvas id="canvas" width="800" height="500"></canvas>
+
+<script src="script.js"></script>
+
+</body>
+</html>
