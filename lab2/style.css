@@ -1,0 +1,16 @@
+body {
+    font-family: Arial;
+    text-align: center;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+input {
+    margin: 5px;
+}
+
+svg {
+    border: 1px solid black;
+}

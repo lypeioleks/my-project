@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<h2>Рух тіла під кутом</h2>
+
+<div class="controls">
+    <label>Початкова швидкість (v0):</label>
+    <input type="number" id="v0" value="50">
+
+    <label>Кут (градуси):</label>
+    <input type="number" id="angle" value="45">
+
+    <label>g:</label>
+    <input type="number" id="g" value="9.8">
+
+    <button onclick="draw()">Побудувати</button>
+</div>
+
+<svg width="800" height="500"></svg>
+
+<script src="script.js"></script>
+</body>
+</html>
