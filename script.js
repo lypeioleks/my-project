@@ -25,11 +25,13 @@ function drawGrid() {
 function drawAxes() {
     ctx.strokeStyle = "black";
 
+    // X
     ctx.beginPath();
     ctx.moveTo(0, canvas.height);
     ctx.lineTo(canvas.width, canvas.height);
     ctx.stroke();
 
+    // Y
     ctx.beginPath();
     ctx.moveTo(0, 0);
     ctx.lineTo(0, canvas.height);
@@ -37,24 +39,26 @@ function drawAxes() {
 }
 
 function drawTrajectory() {
-    const x0 = parseFloat(document.getElementById("x0").value);
-    const y0 = parseFloat(document.getElementById("y0").value);
-    const angle = parseFloat(document.getElementById("angle").value) * Math.PI / 180;
-    const v0 = parseFloat(document.getElementById("velocity").value);
-    const a = parseFloat(document.getElementById("acceleration").value);
+    const x0 = parseFloat(document.getElementById("x0").value) || 0;
+    const y0 = parseFloat(document.getElementById("y0").value) || 0;
+    const angle = (parseFloat(document.getElementById("angle").value) || 0) * Math.PI / 180;
+    const v0 = parseFloat(document.getElementById("velocity").value) || 0;
+    const a = parseFloat(document.getElementById("acceleration").value) || 0;
     const color = document.getElementById("color").value;
 
     let t = 0;
     let dt = 0.05;
+    let tMax = 10; // 🔥 щоб не було зависання
 
     ctx.strokeStyle = color;
     ctx.beginPath();
 
-    while (true) {
+    while (t <= tMax) {
         let x = x0 + v0 * Math.cos(angle) * t;
         let y = y0 + v0 * Math.sin(angle) * t - (a * t * t) / 2;
 
-        if (y < 0) break;
+        // зупинка тільки якщо є прискорення
+        if (y < 0 && a !== 0) break;
 
         let canvasX = x * 5;
         let canvasY = canvas.height - y * 5;
@@ -77,5 +81,6 @@ function clearCanvas() {
     drawAxes();
 }
 
+// старт
 drawGrid();
 drawAxes();

@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Лаб 1 — Траєкторія руху</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Лабораторна 1</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        canvas {
+            border: 1px solid black;
+            margin-top: 20px;
+        }
+
+        input {
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Моделювання траєкторії руху матеріальної точки</h2>
+<h2>Моделювання руху</h2>
 
-<div class="controls">
-    x0: <input type="number" id="x0" value="0">
-    y0: <input type="number" id="y0" value="0">
-    Кут (градуси): <input type="number" id="angle" value="45">
-    v0: <input type="number" id="velocity" value="50">
-    a: <input type="number" id="acceleration" value="9.8">
-    Колір: <input type="color" id="color" value="#ff0000">
-    <button onclick="drawTrajectory()">Побудувати</button>
-    <button onclick="clearCanvas()">Очистити</button>
+<div>
+    x0: <input id="x0" type="number" value="0">
+    y0: <input id="y0" type="number" value="0">
+    Кут: <input id="angle" type="number" value="30">
+    Швидкість: <input id="velocity" type="number" value="50">
+    Прискорення: <input id="acceleration" type="number" value="9.8"><br>
+    Колір: <input id="color" type="color" value="#ff0000">
 </div>
+
+<button onclick="drawTrajectory()">Побудувати</button>
+<button onclick="clearCanvas()">Очистити</button>
+
+<br>
 
 <canvas id="canvas" width="800" height="500"></canvas>
 
